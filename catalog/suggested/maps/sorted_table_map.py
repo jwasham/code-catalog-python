@@ -4,7 +4,7 @@ from .map_base import MapBase
 class SortedTableMap(MapBase):
     """Map implementation using a sorted table."""
 
-    # ----------------------------- nonpublic behaviors -----------------------------
+    # ---------------- nonpublic behaviors ----------------
     def _find_index(self, k, low, high):
         """Return index of the leftmost item with key greater than or equal to k.
 
@@ -25,7 +25,7 @@ class SortedTableMap(MapBase):
             else:
                 return self._find_index(k, mid + 1, high)  # answer is right of mid
 
-    # ----------------------------- public behaviors -----------------------------
+    # ---------------- public behaviors ----------------
     def __init__(self):
         """Create an empty map."""
         self._table = []

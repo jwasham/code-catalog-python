@@ -4,7 +4,7 @@ from .heap_priority_queue import HeapPriorityQueue
 class AdaptableHeapPriorityQueue(HeapPriorityQueue):
     """A locator-based priority queue implemented with a binary heap."""
 
-    # ------------------------------ nested Locator class ------------------------------
+    # ----------------- nested Locator class -----------------
     class Locator(HeapPriorityQueue._Item):
         """Token for locating an entry of the priority queue."""
         __slots__ = '_index'  # add index as additional field
@@ -13,7 +13,7 @@ class AdaptableHeapPriorityQueue(HeapPriorityQueue):
             super().__init__(k, v)
             self._index = j
 
-    # ------------------------------ nonpublic behaviors ------------------------------
+    # ----------------- nonpublic behaviors -----------------
     # override swap to record new indices
     def _swap(self, i, j):
         super()._swap(i, j)  # perform the swap
@@ -26,7 +26,7 @@ class AdaptableHeapPriorityQueue(HeapPriorityQueue):
         else:
             self._downheap(j)
 
-    # ------------------------------ public behaviors ------------------------------
+    # ----------------- public behaviors -----------------
     def add(self, key, value):
         """Add a key-value pair."""
         token = self.Locator(key, value, len(self._data))  # initiaize locator index

@@ -4,7 +4,7 @@ from .doubly_linked_base import DoublyLinkedBase
 class PositionalList(DoublyLinkedBase):
     """A sequential container of elements allowing positional access."""
 
-    # -------------------------- nested Position class --------------------------
+    # ------------- nested Position class -------------
     class Position:
         """An abstraction representing the location of a single element.
 
@@ -31,7 +31,7 @@ class PositionalList(DoublyLinkedBase):
             """Return True if other does not represent the same location."""
             return not (self == other)  # opposite of __eq__
 
-    # ------------------------------- utility methods -------------------------------
+    # ------------------ utility methods ------------------
     def _validate(self, p):
         """Return position's node, or raise appropriate error if invalid."""
         if not isinstance(p, self.Position):
@@ -49,7 +49,7 @@ class PositionalList(DoublyLinkedBase):
         else:
             return self.Position(self, node)  # legitimate position
 
-    # ------------------------------- accessors -------------------------------
+    # ------------------ accessors ------------------
     def first(self):
         """Return the first Position in the list (or None if list is empty)."""
         return self._make_position(self._header._next)
@@ -75,7 +75,7 @@ class PositionalList(DoublyLinkedBase):
             yield cursor.element()
             cursor = self.after(cursor)
 
-    # ------------------------------- mutators -------------------------------
+    # ------------------ mutators ------------------
     # override inherited version to return Position, rather than Node
     def _insert_between(self, e, predecessor, successor):
         """Add element between existing nodes and return new Position."""

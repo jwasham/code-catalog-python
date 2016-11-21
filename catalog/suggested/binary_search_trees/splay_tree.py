@@ -4,7 +4,7 @@ from .binary_search_tree import TreeMap
 class SplayTreeMap(TreeMap):
     """Sorted map implementation using a splay tree."""
 
-    # --------------------------------- splay operation --------------------------------
+    # ------------- splay operation -------------
     def _splay(self, p):
         while p != self.root():
             parent = self.parent(p)
@@ -21,7 +21,7 @@ class SplayTreeMap(TreeMap):
                 self._rotate(p)  # move p up
                 self._rotate(p)  # move p up again
 
-    # ---------------------------- override balancing hooks ----------------------------
+    # ------------- override balancing hooks -------------
     def _rebalance_insert(self, p):
         self._splay(p)
 

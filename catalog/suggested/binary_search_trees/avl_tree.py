@@ -4,7 +4,7 @@ from .binary_search_tree import TreeMap
 class AVLTreeMap(TreeMap):
     """Sorted map implementation using an AVL tree."""
 
-    # -------------------------- nested _Node class --------------------------
+    # ------------- nested _Node class -------------
     class _Node(TreeMap._Node):
         """Node class for AVL maintains height value for balancing.
 
@@ -22,7 +22,7 @@ class AVLTreeMap(TreeMap):
         def right_height(self):
             return self._right._height if self._right is not None else 0
 
-    # ------------------------- positional-based utility methods -------------------------
+    # ------------- positional-based utility methods -------------
     def _recompute_height(self, p):
         p._node._height = 1 + max(p._node.left_height(), p._node.right_height())
 
@@ -56,7 +56,7 @@ class AVLTreeMap(TreeMap):
             else:
                 p = self.parent(p)  # repeat with parent
 
-    # ---------------------------- override balancing hooks ----------------------------
+    # ------------- override balancing hooks -------------
     def _rebalance_insert(self, p):
         self._rebalance(p)
 

@@ -6,7 +6,7 @@ from ..empty import Empty
 class SortedPriorityQueue(PriorityQueueBase):  # base class defines _Item
     """A min-oriented priority queue implemented with a sorted list."""
 
-    # ------------------------------ public behaviors ------------------------------
+    # ----------------- public behaviors -----------------
     def __init__(self):
         """Create a new empty Priority Queue."""
         self._data = PositionalList()

@@ -4,7 +4,7 @@ from .binary_search_tree import TreeMap
 class RedBlackTreeMap(TreeMap):
     """Sorted map implementation using a red-black tree."""
 
-    # -------------------------- nested _Node class --------------------------
+    # ------------- nested _Node class -------------
     class _Node(TreeMap._Node):
         """Node class for red-black tree maintains bit that denotes color."""
         __slots__ = '_red'  # add additional data member to the Node class
@@ -13,7 +13,7 @@ class RedBlackTreeMap(TreeMap):
             super().__init__(element, parent, left, right)
             self._red = True  # new node red by default
 
-    # ------------------------- positional-based utility methods -------------------------
+    # ------------- positional-based utility methods -------------
     # we consider a nonexistent child to be trivially black
     def _set_red(self, p):
         p._node._red = True
@@ -37,7 +37,7 @@ class RedBlackTreeMap(TreeMap):
                 return child
         return None
 
-    # ------------------------- support for insertions -------------------------
+    # ------------- support for insertions -------------
     def _rebalance_insert(self, p):
         self._resolve_red(p)  # new node is always red
 
@@ -60,7 +60,7 @@ class RedBlackTreeMap(TreeMap):
                     self._set_black(self.right(grand))
                     self._resolve_red(grand)  # recur at red grandparent
 
-    # ------------------------- support for deletions -------------------------
+    # ------------- support for deletions -------------
     def _rebalance_delete(self, p):
         if len(self) == 1:
             self._set_black(self.root())  # special case: ensure that root is black

@@ -6,7 +6,7 @@ class Empty(Exception):
 class LinkedQueue:
     """FIFO queue implementation using a singly linked list for storage."""
 
-    # -------------------------- nested _Node class --------------------------
+    # ------------- nested _Node class -------------
     class _Node:
         """Lightweight, nonpublic class for storing a singly linked node."""
         __slots__ = '_element', '_next'  # streamline memory usage
@@ -15,7 +15,7 @@ class LinkedQueue:
             self._element = element
             self._next = next
 
-    # ------------------------------- queue methods -------------------------------
+    # ------------------ queue methods ------------------
     def __init__(self):
         """Create an empty queue."""
         self._head = None

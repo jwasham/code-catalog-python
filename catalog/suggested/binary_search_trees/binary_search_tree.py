@@ -5,7 +5,7 @@ from ..maps.map_base import MapBase
 class TreeMap(LinkedBinaryTree, MapBase):
     """Sorted map implementation using a binary search tree."""
 
-    # ---------------------------- override Position class ----------------------------
+    # ------------- override Position class -------------
     class Position(LinkedBinaryTree.Position):
         def key(self):
             """Return key of map's key-value pair."""
@@ -15,7 +15,7 @@ class TreeMap(LinkedBinaryTree, MapBase):
             """Return value of map's key-value pair."""
             return self.element()._value
 
-    # ------------------------------- nonpublic utilities -------------------------------
+    # ------------- nonpublic utilities -------------
     def _subtree_search(self, p, k):
         """Return Position of p's subtree having key k, or last node searched."""
         if k == p.key():  # found match
@@ -42,7 +42,7 @@ class TreeMap(LinkedBinaryTree, MapBase):
             walk = self.right(walk)
         return walk
 
-    # --------------------- public methods providing "positional" support ---------------------
+    # ------------- public methods providing "positional" support -------------
     def first(self):
         """Return the first Position in the tree (or None if empty)."""
         return self._subtree_first_position(self.root()) if len(self) > 0 else None
@@ -105,7 +105,7 @@ class TreeMap(LinkedBinaryTree, MapBase):
         self._delete(p)  # inherited from LinkedBinaryTree
         self._rebalance_delete(parent)  # if root deleted, parent is None
 
-    # --------------------- public methods for (standard) map interface ---------------------
+    # ------------- public methods for (standard) map interface -------------
     def __getitem__(self, k):
         """Return value associated with key k (raise KeyError if not found)."""
         if self.is_empty():
@@ -152,7 +152,7 @@ class TreeMap(LinkedBinaryTree, MapBase):
             yield p.key()
             p = self.after(p)
 
-    # --------------------- public methods for sorted map interface ---------------------
+    # ------------- public methods for sorted map interface -------------
     def __reversed__(self):
         """Generate an iteration of all keys in the map in reverse order."""
         p = self.last()
@@ -246,7 +246,7 @@ class TreeMap(LinkedBinaryTree, MapBase):
                 yield (p.key(), p.value())
                 p = self.after(p)
 
-    # --------------------- hooks used by subclasses to balance a tree ---------------------
+    # ------------- hooks used by subclasses to balance a tree -------------
     def _rebalance_insert(self, p):
         """Call to indicate that position p is newly added."""
         pass
@@ -259,7 +259,7 @@ class TreeMap(LinkedBinaryTree, MapBase):
         """Call to indicate that position p was recently accessed."""
         pass
 
-    # --------------------- nonpublic methods to support tree balancing ---------------------
+    # ------------- nonpublic methods to support tree balancing -------------
 
     def _relink(self, parent, child, make_left_child):
         """Relink parent node with child node (we allow child to be None)."""

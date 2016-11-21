@@ -1,7 +1,7 @@
 class DoublyLinkedBase:
     """A base class providing a doubly linked list representation."""
 
-    # -------------------------- nested _Node class --------------------------
+    # ------------- nested _Node class -------------
     # nested _Node class
     class _Node:
         """Lightweight, nonpublic class for storing a doubly linked node."""
@@ -12,7 +12,7 @@ class DoublyLinkedBase:
             self._prev = prev  # previous node reference
             self._next = next  # next node reference
 
-    # -------------------------- list constructor --------------------------
+    # ------------- list constructor -------------
 
     def __init__(self):
         """Create an empty list."""
@@ -22,7 +22,7 @@ class DoublyLinkedBase:
         self._trailer._prev = self._header  # header is before trailer
         self._size = 0  # number of elements
 
-    # -------------------------- public accessors --------------------------
+    # ------------- public accessors -------------
 
     def __len__(self):
         """Return the number of elements in the list."""
@@ -32,7 +32,7 @@ class DoublyLinkedBase:
         """Return True if list is empty."""
         return self._size == 0
 
-    # -------------------------- nonpublic utilities --------------------------
+    # ------------- nonpublic utilities -------------
 
     def _insert_between(self, e, predecessor, successor):
         """Add element e between two existing nodes and return new node."""

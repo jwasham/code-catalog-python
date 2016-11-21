@@ -5,7 +5,7 @@ from ..empty import Empty
 class HeapPriorityQueue(PriorityQueueBase):  # base class defines _Item
     """A min-oriented priority queue implemented with a binary heap."""
 
-    # ------------------------------ nonpublic behaviors ------------------------------
+    # ----------------- nonpublic behaviors -----------------
     def _parent(self, j):
         return (j - 1) // 2
 
@@ -43,7 +43,7 @@ class HeapPriorityQueue(PriorityQueueBase):  # base class defines _Item
                 self._swap(j, small_child)
                 self._downheap(small_child)  # recur at position of small child
 
-    # ------------------------------ public behaviors ------------------------------
+    # ----------------- public behaviors -----------------
     def __init__(self):
         """Create a new empty Priority Queue."""
         self._data = []

@@ -1,7 +1,7 @@
 class PriorityQueueBase:
     """Abstract base class for a priority queue."""
 
-    # ------------------------------ nested _Item class ------------------------------
+    # ----------------- nested _Item class -----------------
     class _Item:
         """Lightweight composite to store priority queue items."""
         __slots__ = '_key', '_value'
@@ -16,7 +16,7 @@ class PriorityQueueBase:
         def __repr__(self):
             return '({0},{1})'.format(self._key, self._value)
 
-    # ------------------------------ public behaviors ------------------------------
+    # ----------------- public behaviors -----------------
     def is_empty(self):  # concrete method assuming abstract len
         """Return True if the priority queue is empty."""
         return len(self) == 0

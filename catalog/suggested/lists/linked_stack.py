@@ -6,7 +6,7 @@ class Empty(Exception):
 class LinkedStack:
     """LIFO Stack implementation using a singly linked list for storage."""
 
-    # -------------------------- nested _Node class --------------------------
+    # ------------- nested _Node class -------------
     class _Node:
         """Lightweight, nonpublic class for storing a singly linked node."""
         __slots__ = '_element', '_next'  # streamline memory usage
@@ -15,7 +15,7 @@ class LinkedStack:
             self._element = element  # reference to user's element
             self._next = next  # reference to next node
 
-    # ------------------------------- stack methods -------------------------------
+    # ------------------ stack methods ------------------
     def __init__(self):
         """Create an empty stack."""
         self._head = None  # reference to the head node

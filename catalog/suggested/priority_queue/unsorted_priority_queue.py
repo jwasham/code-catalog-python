@@ -6,7 +6,7 @@ from ..empty import Empty
 class UnsortedPriorityQueue(PriorityQueueBase):  # base class defines _Item
     """A min-oriented priority queue implemented with an unsorted list."""
 
-    # ----------------------------- nonpublic behavior -----------------------------
+    # ---------------- nonpublic behavior ----------------
     def _find_min(self):
         """Return Position of item with minimum key."""
         if self.is_empty():  # is_empty inherited from base class
@@ -19,7 +19,7 @@ class UnsortedPriorityQueue(PriorityQueueBase):  # base class defines _Item
             walk = self._data.after(walk)
         return small
 
-    # ------------------------------ public behaviors ------------------------------
+    # ----------------- public behaviors -----------------
     def __init__(self):
         """Create a new empty Priority Queue."""
         self._data = PositionalList()

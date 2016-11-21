@@ -4,7 +4,7 @@ from .binary_tree import BinaryTree
 class LinkedBinaryTree(BinaryTree):
     """Linked representation of a binary tree structure."""
 
-    # -------------------------- nested _Node class --------------------------
+    # ------------- nested _Node class -------------
     class _Node:
         """Lightweight, nonpublic class for storing a node."""
         __slots__ = '_element', '_parent', '_left', '_right'  # streamline memory usage
@@ -15,7 +15,7 @@ class LinkedBinaryTree(BinaryTree):
             self._left = left
             self._right = right
 
-    # -------------------------- nested Position class --------------------------
+    # ------------- nested Position class -------------
     class Position(BinaryTree.Position):
         """An abstraction representing the location of a single element."""
 
@@ -32,7 +32,7 @@ class LinkedBinaryTree(BinaryTree):
             """Return True if other is a Position representing the same location."""
             return type(other) is type(self) and other._node is self._node
 
-    # ------------------------------- utility methods -------------------------------
+    # ------------------ utility methods ------------------
     def _validate(self, p):
         """Return associated node, if position is valid."""
         if not isinstance(p, self.Position):
@@ -47,13 +47,13 @@ class LinkedBinaryTree(BinaryTree):
         """Return Position instance for given node (or None if no node)."""
         return self.Position(self, node) if node is not None else None
 
-    # -------------------------- binary tree constructor --------------------------
+    # ------------- binary tree constructor -------------
     def __init__(self):
         """Create an initially empty binary tree."""
         self._root = None
         self._size = 0
 
-    # -------------------------- public accessors --------------------------
+    # ------------- public accessors -------------
     def __len__(self):
         """Return the total number of elements in the tree."""
         return self._size
@@ -87,7 +87,7 @@ class LinkedBinaryTree(BinaryTree):
             count += 1
         return count
 
-    # -------------------------- nonpublic mutators --------------------------
+    # ------------- nonpublic mutators -------------
     def _add_root(self, e):
         """Place element e at the root of an empty tree and return new Position.
 

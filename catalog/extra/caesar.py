@@ -12,7 +12,7 @@ class CaesarCipher:
         self._backward = ''.join(decoder)  # since fixed
 
     def encrypt(self, message):
-        """Return string representing encripted message."""
+        """Return string representing encrypted message."""
         return self._transform(message, self._forward)
 
     def decrypt(self, secret):

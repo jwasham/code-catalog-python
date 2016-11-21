@@ -4,7 +4,7 @@ from ..lists.linked_queue import LinkedQueue
 class Tree:
     """Abstract base class representing a tree structure."""
 
-    # ------------------------------- nested Position class -------------------------------
+    # ------------------ nested Position class ------------------
     class Position:
         """An abstraction representing the location of a single element within a tree.
 

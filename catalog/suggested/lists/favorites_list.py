@@ -4,7 +4,7 @@ from .positional_list import PositionalList
 class FavoritesList:
     """List of elements ordered from most frequently accessed to least."""
 
-    # ------------------------------ nested _Item class ------------------------------
+    # ----------------- nested _Item class -----------------
     class _Item:
         __slots__ = '_value', '_count'  # streamline memory usage
 
@@ -12,7 +12,7 @@ class FavoritesList:
             self._value = e  # the user's element
             self._count = 0  # access count initially zero
 
-    # ------------------------------- nonpublic utilities -------------------------------
+    # ------------------ nonpublic utilities ------------------
     def _find_position(self, e):
         """Search for element e and return its Position (or None if not found)."""
         walk = self._data.first()
@@ -31,7 +31,7 @@ class FavoritesList:
                     walk = self._data.before(walk)
                 self._data.add_before(walk, self._data.delete(p))  # delete/reinsert
 
-    # ------------------------------- public methods -------------------------------
+    # ------------------ public methods ------------------
     def __init__(self):
         """Create an empty list of favorites."""
         self._data = PositionalList()  # will be list of _Item instances

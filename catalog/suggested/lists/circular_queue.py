@@ -6,7 +6,7 @@ class Empty(Exception):
 class CircularQueue:
     """Queue implementation using circularly linked list for storage."""
 
-    # ---------------------------------------------------------------------------------
+    # ------------------------------------------
     # nested _Node class
     class _Node:
         """Lightweight, nonpublic class for storing a singly linked node."""
@@ -17,7 +17,7 @@ class CircularQueue:
             self._next = next
 
     # end of _Node class
-    # ---------------------------------------------------------------------------------
+    # ------------------------------------------
 
     def __init__(self):
         """Create an empty queue."""
