@@ -1,5 +1,4 @@
 from .linked_queue import LinkedQueue
-import collections
 
 
 class Tree:
