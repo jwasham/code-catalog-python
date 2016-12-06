@@ -1,3 +1,8 @@
+"""
+Permute a string that contains unique characters.
+"""
+
+
 def permute(chars):
     if len(chars) == 0:
         return [chars]
