@@ -1,6 +1,6 @@
 # Code Catalog in Python
 
-**This is my catalog of algorithms and data structures for review for a coding 
+**This is my catalog of data structures and algorithms for review for a coding 
 interview.**
 
 I've printed these out and so I can review them.
