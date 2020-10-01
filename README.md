@@ -24,5 +24,7 @@ For great books on data structures and algorithms in Python:
 ![Grokking Algorithms](./img/grokking_book_cover.jpg)
 
 ---
+Thanks for visiting us.
 
-May contain bugs.
+
+Note - May contain bugs.
